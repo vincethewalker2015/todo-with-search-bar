@@ -1,0 +1,27 @@
+
+
+<div class='search-area mt-4'>
+  <%= form_tag search_todo_path, remote: true, method: :get do %>
+    <div class="form-group row">
+      <div class="col-sm-9 no-right-padding">
+        <%= text_field_tag :todo, params[:todo], placeholder: "Search for name or description", autofocus: true, class: "form-control form-control-lg" %>
+      </div>
+      <div class="col-sm-3 no-left-padding">
+        <%= button_tag type: :submit, class: "btn btn-dark btn-lg" do %>
+          <i class="fa fa-search "></i>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div id="todo-results">
+
+</div>
+
+<%# if !@todos.empty? %>
+  <%#= render 'todos/todo_result' %>
+  <%# else %>
+ <!-- <h4>You have no Todos..</h4> -->
+<%# end %>
+
