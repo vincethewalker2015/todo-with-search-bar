@@ -49,5 +49,15 @@ textarea {
 
 .results-block {
   display: inline-block;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
+
+// Todo Results Page
+  .todo-description {
+    width: 100%;
+    overflow: scroll;
+  }
+
+  .name-text {
+    margin-bottom: 0 !important;
+  }
