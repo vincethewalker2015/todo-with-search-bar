@@ -1,14 +1,13 @@
-<span class="page-title"><h1 class="center">todos</h1></span>
 
-<div class='search-area'>
- <span class="page-title"> <h3>Search todos</h3></span>
+
+<div class='search-area mt-4'>
   <%= form_tag search_todo_path, remote: true, method: :get do %>
     <div class="form-group row">
       <div class="col-sm-9 no-right-padding">
-        <%= text_field_tag :todo, params[:todo], placeholder: "Name or email", autofocus: true, class: "form-control form-control-lg" %>
+        <%= text_field_tag :todo, params[:todo], placeholder: "Search for name or description", autofocus: true, class: "form-control form-control-lg" %>
       </div>
       <div class="col-sm-3 no-left-padding">
-        <%= button_tag type: :submit, class: "btn btn-dark btn-lg ml-2" do %>
+        <%= button_tag type: :submit, class: "btn btn-dark btn-lg" do %>
           <i class="fa fa-search "></i>
         <% end %>
       </div>
