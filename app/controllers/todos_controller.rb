@@ -49,7 +49,7 @@ class TodosController < ApplicationController
     if params[:todo].present?
       @todos = params[:todo].present? # This can create multiple results thus the choice to change from @friend to @friends
         @todos = Todo.search(params[:todo])
-        if @todos && @todos.count > 1
+        if @todos && @todos.count > 0
           respond_to do |format|
             format.js { render partial: 'todos/todo_result' }
           end
