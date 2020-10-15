@@ -44,6 +44,28 @@ class TodosController < ApplicationController
      flash[:success] = "Todo was deleted Successfully"
      redirect_to todos_path
   end
+
+  def search
+    if params[:todo].present?
+      @todos = params[:todo].present? # This can create multiple results thus the choice to change from @friend to @friends
+        @todos = Todo.search(params[:todo])
+        if @todos
+          respond_to do |format|
+            format.js { render partial: 'todos/todo_result' }
+          end
+        else
+          respond_to do |format|
+            flash.now[:alert] = "There is No Todo for this request.."
+            format.js { render partial: 'todos/todo_result' }
+          end
+        end
+      else
+        respond_to do |format|
+          flash.now[:alert] = "Please enter a Todo name or description to search"
+          format.js { render partial: 'todos/todo_result' }
+        end
+      end
+    end
   
   private
   
@@ -53,7 +75,6 @@ class TodosController < ApplicationController
   
   def todo_params
     params.require(:todo).permit(:name, :description)
-  
   end
 
 end

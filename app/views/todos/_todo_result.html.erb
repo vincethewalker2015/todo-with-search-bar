@@ -1,0 +1,22 @@
+<div class="results-block">
+  <%= render 'layouts/flash' %>
+</div>
+
+<% if @todos %>
+   <!-- <div class="card card-header results-block"> -->
+    <table class="col-md-12">
+      <tbody>
+        <% @todos.each do |todo| %>
+          <tr class="card card-header results-block">
+            <td><strong>Name: </strong> <%= todo.name %></td>
+              <td><strong>Email: </strong> <%= todo.description %></td>
+              <td></td>
+              <td><%= link_to "View #{todo.name}'s Details", todo_path(todo),
+                                            class: "btn btn-primary btn-sm " %>
+              </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <!-- </div> -->
+ <% end %> 
