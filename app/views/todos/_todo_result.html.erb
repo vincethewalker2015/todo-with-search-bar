@@ -9,10 +9,10 @@
         <% @todos.each do |todo| %>
           <tr class="card card-header results-block mb-1">
             <td><strong>Name: </strong> <%= todo.name %></td>
-              <td class="mt-1"><strong>Email: </strong> <%= todo.description %></td>
+              <td class="mt-1"><strong class="ml-2">Email: </strong> <%= todo.description %></td>
              
               <td class="mt-1"><%= link_to "View #{todo.name}'s Details", todo_path(todo),
-                                            class: "btn btn-primary btn-sm " %>
+                                            class: "btn btn-outline-primary btn-sm ml-2" %>
               </td>
           </tr>
         <% end %>
