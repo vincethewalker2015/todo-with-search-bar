@@ -61,3 +61,21 @@ textarea {
   .name-text {
     margin-bottom: 0 !important;
   }
+
+  // Search Bar
+
+  .search-area {
+    @media (max-width: 480px) {
+      width: 100%;
+      height: auto;
+      .btn {
+        margin-left: 90px;
+        margin-top: 15px;
+        width: 40%;
+      }
+    }
+  }
+
+  // Nav Bar
+
+   
