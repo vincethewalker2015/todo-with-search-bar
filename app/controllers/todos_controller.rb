@@ -55,7 +55,7 @@ class TodosController < ApplicationController
           end
         else
           respond_to do |format|
-            flash.now[:danger] = "There are No Todo's found for this request.."
+            flash.now[:danger] = "There are no result's found for this request.."
             format.js { render partial: 'todos/todo_result' }
           end
         end
